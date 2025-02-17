@@ -1,92 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prakash Dhimal - Resume</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prakash Dhimal | Resume</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Prakash Dhimal</h1>
-        <p>Senior Software Developer | Java | AWS | Cloud | DevOps</p>
-        <p>📞 330-903-6009 | ✉️ prakash.dhimal.civ@us.navy.mil</p>
-        <p>
-            <a href="https://linkedin.com/in/pdhimal" target="_blank">LinkedIn</a> | 
-            <a href="https://github.com/pdhimal1" target="_blank">GitHub</a>
-        </p>
-    </header>
+  <header>
+    <h1>Prakash Dhimal</h1>
+    <p>Senior Software Developer | Java | AWS | Cloud | DevOps</p>
+    <div class="header-links">
+      <a href="https://linkedin.com/in/pdhimal" target="_blank">LinkedIn</a>
+      <a href="https://github.com/pdhimal1" target="_blank">GitHub</a>
+    </div>
+    <button id="dark-mode-toggle">🌙</button>
+  </header>
 
-    <section>
-        <h2>Professional Summary</h2>
-        <p>Experienced software developer with 8+ years in software development, cloud infrastructure, and application containerization. 
-           Proficient in Java, Python, C, and C++, specializing in modeling and simulation applications for radio frequency (RF) analysis. 
-           Extensive experience in Linux environments, cloud-based deployments, and optimizing large-scale applications for government and defense organizations.</p>
+  <nav>
+    <button class="tab-link active" onclick="openTab(event, 'about')">About</button>
+    <button class="tab-link" onclick="openTab(event, 'experience')">Experience</button>
+    <button class="tab-link" onclick="openTab(event, 'projects')">Projects</button>
+    <button class="tab-link" onclick="openTab(event, 'skills')">Skills</button>
+    <button class="tab-link" onclick="openTab(event, 'contact')">Contact</button>
+  </nav>
+
+  <main>
+    <section id="about" class="tab-content active">
+      <h2>Professional Summary</h2>
+      <p>
+        Experienced software developer with 8+ years in software development, cloud infrastructure management, and application containerization. Proficient in Java, Python, C, and C++, with extensive experience working on modeling and simulation applications for radio frequency (RF) analysis. Strong background in Linux environments—both professionally and personally—with expertise in leading teams, managing cloud deployments, and optimizing large-scale systems for government and defense organizations.
+      </p>
     </section>
 
-    <section>
-        <h2>Education</h2>
-        <p><strong>Master of Science, Computer Science</strong> – George Mason University, May 2021</p>
-        <p>Relevant Coursework: Analysis of Algorithms, Distributed Systems, Computational Geometry, Data Mining</p>
-        <p><strong>Bachelor of Science, Computer Science (Minor: Finance)</strong> – University of West Florida, May 2016</p>
-    </section>
-
-    <section>
-        <h2>Skills</h2>
+    <section id="experience" class="tab-content">
+      <h2>Experience</h2>
+      <div class="job">
+        <h3>Computer Scientist</h3>
+        <p><strong>U.S. Naval Research Laboratory (NRL), Washington, D.C.</strong></p>
+        <p><em>August 2016 – Present</em></p>
         <ul>
-            <li>Programming: Java, Python, C++, C</li>
-            <li>Cloud & DevOps: AWS GovCloud, Docker, Kubernetes</li>
-            <li>Operating Systems: Linux (Primary development environment)</li>
-            <li>Software Development: Backend systems, Web applications, API development</li>
-            <li>Infrastructure & Automation: CI/CD pipelines (Jenkins, Maven), S3 data management</li>
-            <li>Data & Visualization: RF modeling, Simulation tools, Weather data integration</li>
-            <li>Agile & Leadership: Team mentoring, Project management, Agile development</li>
+          <li>
+            <strong>Lead Developer & Cloud Infrastructure Management:</strong> Oversee development and deployment of Interactive Scenario Builder (Builder), a 3D modeling and simulation tool used for RF propagation analysis to support U.S. Navy operations.
+          </li>
+          <li>
+            <strong>Cloud-Based Development & Deployment:</strong> Manage Dockerized applications, web services, and APIs in AWS GovCloud, ensuring scalability, security, and performance.
+          </li>
+          <li>
+            <strong>Software Development:</strong> Maintain and enhance core Java-based systems, integrating new functionalities for electromagnetic and weather modeling.
+          </li>
+          <li>
+            <strong>Team Leadership & Mentoring:</strong> Conduct team meetings, manage infrastructure planning and cloud resource allocation, and mentor junior engineers.
+          </li>
+          <li>
+            <strong>Cross-Agency Collaboration:</strong> Work with NRL Marine Meteorology Division and other defense agencies to integrate geospatial data, weather models, and electromagnetic prediction tools into mission planning applications.
+          </li>
+          <li>
+            <strong>System Migration & Optimization:</strong> Transition legacy systems to cloud-based infrastructure, reducing latency and improving performance and reliability.
+          </li>
+          <li>
+            <strong>Web & API Development:</strong> Contribute to web-based visualization tools for RF data analysis, enhancing accessibility for military operators.
+          </li>
+          <li>
+            <strong>Rapid Prototyping & Research Support:</strong> Lead development of prototypes for electromagnetic spectrum modeling and conduct performance evaluations for cutting-edge RF technologies.
+          </li>
         </ul>
+      </div>
+
+      <div class="job">
+        <h3>Research Intern – Computer Vision</h3>
+        <p><strong>Air Force Research Laboratory (AFRL), Eglin AFB, FL</strong></p>
+        <p><em>June 2015 – August 2015</em></p>
+        <ul>
+          <li>
+            Developed a Python-based georegistration database to associate Earth imagery with geospatial locations as part of a georegistration project.
+          </li>
+          <li>
+            Employed Linux-based tools and scripting to enhance data processing workflows and improve research accuracy.
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <section>
-        <h2>Professional Experience</h2>
-
-        <h3>Computer Scientist | U.S. Naval Research Laboratory (NRL)</h3>
-        <p><i>August 2016 – Present</i></p>
-        <ul>
-            <li>Lead developer for <strong>Interactive Scenario Builder (Builder)</strong>, a 3D modeling tool for RF propagation analysis.</li>
-            <li>Managed cloud-based deployments using AWS GovCloud, Docker, and Kubernetes.</li>
-            <li>Developed core Java-based systems for electromagnetic and weather modeling.</li>
-            <li>Led team meetings, infrastructure planning, and cloud resource management.</li>
-            <li>Collaborated with NRL Marine Meteorology Division to integrate weather and geospatial data.</li>
-            <li>Optimized legacy systems, reducing latency and improving reliability.</li>
-        </ul>
-
-        <h3>Research Intern – Computer Vision | Air Force Research Laboratory (AFRL)</h3>
-        <p><i>June 2015 – August 2015</i></p>
-        <ul>
-            <li>Developed a Python-based georegistration system for associating Earth imagery with geospatial locations.</li>
-            <li>Used Linux-based tools and scripting to enhance data processing workflows.</li>
-        </ul>
+    <section id="projects" class="tab-content">
+      <h2>Projects & Research</h2>
+      <ul>
+        <li>
+          <strong>Interactive Scenario Builder (Builder):</strong> Lead developer and cloud infrastructure manager for a mission-critical RF modeling and simulation tool. Technologies: Java, AWS GovCloud, Docker.
+        </li>
+        <li>
+          <strong>Stock Predictor using Machine Learning:</strong> Developed a Python application leveraging scikit-learn to predict stock prices using historical data from Yahoo Finance, featuring both GUI and command-line interfaces.
+        </li>
+        <li>
+          <strong>Hidden Point Removal (HPR) Operator Implementation:</strong> Implemented the HPR algorithm in C++ to optimize 3D point cloud processing for improved visibility determination.
+        </li>
+        <li>
+          <strong>Customer Churn Prediction (Sparkify):</strong> Built a machine learning model to predict customer churn using user interaction data, incorporating data wrangling and model evaluation.
+        </li>
+        <li>
+          <strong>Date Calculator in C:</strong> Created a comprehensive C program for date arithmetic, complete with a Makefile for streamlined compilation.
+        </li>
+      </ul>
+      <p>For more projects, visit my <a href="https://github.com/pdhimal1" target="_blank">GitHub</a>.</p>
     </section>
 
-    <section>
-        <h2>Projects & Research</h2>
-        <ul>
-            <li><strong>Interactive Scenario Builder (Builder)</strong> – Lead Developer & Cloud Infrastructure Manager | Technologies: Java, AWS GovCloud, Docker</li>
-            <li><strong>Stock Predictor using Machine Learning</strong> – Developed a Python app for stock price predictions using Yahoo Finance data.</li>
-            <li><strong>Hidden Point Removal (HPR) Operator</strong> – Implemented in C++ for optimizing 3D point cloud processing.</li>
-            <li><strong>Customer Churn Prediction (Sparkify)</strong> – Built a machine learning model using user interaction data.</li>
-        </ul>
+    <section id="skills" class="tab-content">
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Programming:</strong> Java, Python, C++, C</li>
+        <li>
+          <strong>Cloud & DevOps:</strong> AWS GovCloud, Google Cloud, Docker, Kubernetes, CI/CD (Jenkins, Maven, GitLab)
+        </li>
+        <li><strong>Operating Systems:</strong> Linux (primary development environment)</li>
+        <li>
+          <strong>Software Development:</strong> Backend systems, Web applications, API development, Distributed Systems
+        </li>
+        <li>
+          <strong>Data & Visualization:</strong> RF modeling, Simulation tools, Weather data integration
+        </li>
+        <li><strong>Agile & Leadership:</strong> Team mentoring, Project management, Agile development practices</li>
+      </ul>
     </section>
 
-    <section>
-        <h2>Leadership & Mentoring</h2>
-        <ul>
-            <li><strong>Industry Mentor | University of West Florida</strong> (Dec 2022 – Present)</li>
-            <li><strong>Team Leadership at NRL</strong> – Onboarded and mentored engineers, managed cloud resources, and optimized infrastructure.</li>
-        </ul>
+    <section id="contact" class="tab-content">
+      <h2>Contact</h2>
+      <p>📞 330-903-6009</p>
+      <p>✉️ dhimalp@gmail.com</p>
+      <p>✉️ prakash.dhimal.civ@us.navy.mil</p>
     </section>
+  </main>
 
-    <footer>
-        <p>© 2025 Prakash Dhimal. All Rights Reserved.</p>
-    </footer>
+  <footer>
+    <p>© 2025 Prakash Dhimal. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
 
