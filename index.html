@@ -3,137 +3,300 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prakash Dhimal | Resume</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <title>Prakash Dhimal - Resume</title>
+  <style>
+    /* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    header, footer {
+      background: #222;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    header h1, footer p {
+      margin: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 2px solid #222;
+      padding-bottom: 5px;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    /* Navigation Tabs */
+    nav {
+      background: #444;
+      padding: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .tab-link {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .tab-link:hover, .tab-link.active {
+      background: #666;
+    }
+    .tab-content {
+      display: none;
+      padding: 20px;
+      text-align: left;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    /* Footer fixed at bottom */
+    footer {
+      background: #222;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+    }
+    /* Dark Mode */
+    .dark-mode {
+      background: #121212;
+      color: white;
+    }
+    .dark-mode header {
+      background: #111;
+    }
+    .dark-mode nav {
+      background: #333;
+    }
+    .dark-mode .tab-link {
+      color: white;
+    }
+    .dark-mode .tab-link.active {
+      background: #555;
+    }
+    .dark-mode .container {
+      background: #222;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Prakash Dhimal</h1>
-    <p>Senior Software Developer | Java | AWS | Cloud | DevOps</p>
-    <div class="header-links">
-      <a href="https://linkedin.com/in/pdhimal" target="_blank">LinkedIn</a>
-      <a href="https://github.com/pdhimal1" target="_blank">GitHub</a>
-    </div>
-    <button id="dark-mode-toggle">🌙</button>
-  </header>
+<header>
+  <h1>Prakash Dhimal</h1>
+  <p>330-903-6009 | prakash.dhimal.civ@us.navy.mil</p>
+  <p>
+    <a href="https://linkedin.com/in/pdhimal" target="_blank" style="color: white; text-decoration: none;">LinkedIn</a> |
+    <a href="https://github.com/pdhimal1" target="_blank" style="color: white; text-decoration: none;">GitHub</a>
+  </p>
+  <button id="dark-mode-toggle">🌙</button>
+</header>
 
-  <nav>
-    <button class="tab-link active" onclick="openTab(event, 'about')">About</button>
-    <button class="tab-link" onclick="openTab(event, 'experience')">Experience</button>
-    <button class="tab-link" onclick="openTab(event, 'projects')">Projects</button>
-    <button class="tab-link" onclick="openTab(event, 'skills')">Skills</button>
-    <button class="tab-link" onclick="openTab(event, 'contact')">Contact</button>
-  </nav>
+<nav>
+  <button class="tab-link active" onclick="openTab(event, 'home')">Home</button>
+  <button class="tab-link" onclick="openTab(event, 'experience')">Experience</button>
+  <button class="tab-link" onclick="openTab(event, 'education')">Education</button>
+  <button class="tab-link" onclick="openTab(event, 'projects')">Projects</button>
+  <button class="tab-link" onclick="openTab(event, 'skills')">Skills</button>
+  <button class="tab-link" onclick="openTab(event, 'contact')">Contact</button>
+</nav>
 
-  <main>
-    <section id="about" class="tab-content active">
-      <h2>Professional Summary</h2>
+<main class="container">
+  <!-- Home Tab: Full Resume -->
+  <section id="home" class="tab-content active">
+    <h2>Professional Summary</h2>
+    <p>
+      Experienced software developer with 8+ years of expertise in software development, cloud infrastructure management, and application containerization. Proficient in Java, Python, C, and C++ with extensive experience in modeling and simulation applications for radio frequency (RF) analysis. Strong background in Linux environments—both professionally and personally—and skilled in leading software development teams, managing cloud-based deployments, and optimizing large-scale systems for government and defense organizations.
+    </p>
+
+    <h2>Education</h2>
+    <p>
+      <strong>Master of Science, Computer Science</strong><br>
+      George Mason University, Fairfax, VA — May 2021<br>
+      Relevant Coursework: Analysis of Algorithms, Advanced Algorithms, Distributed Systems, Computational Geometry, Theory & Application of Data Mining, Mining Massive Datasets
+    </p>
+    <p>
+      <strong>Bachelor of Science, Computer Science (Minor: Finance)</strong><br>
+      University of West Florida, Pensacola, FL — May 2016
+    </p>
+
+    <h2>Experience</h2>
+    <p>
+      <strong>Computer Scientist</strong><br>
+      U.S. Naval Research Laboratory (NRL), Washington, D.C. — August 2016 – Present
+    </p>
+    <p>
+      Lead the development, cloud deployment, and operational support of Interactive Scenario Builder (Builder), a 3D modeling and simulation tool used for radio frequency (RF) mission planning by the U.S. Navy. Oversee the modernization of Builder’s ecosystem, integrating cloud computing, containerization, and web-based solutions to improve accessibility, scalability, and efficiency. Manage end-to-end software development—from design and implementation to deployment and maintenance—ensuring high-performance computing capabilities for mission-critical operations. Spearhead cloud adoption efforts by leading the migration of Builder’s computational workloads to AWS GovCloud, enabling scalable, on-demand RF modeling and simulation services. Facilitate cross-functional collaboration with researchers, engineers, and external partners to enhance system capabilities. Lead infrastructure management, automation, and security compliance to meet DoD standards. Mentor junior engineers and drive innovation in distributed computing, geospatial visualization, and RF propagation modeling.
+    </p>
+    <p>
+      <strong>Research Intern – Computer Vision</strong><br>
+      Air Force Research Laboratory (AFRL), Eglin AFB, FL — June 2015 – August 2015
+    </p>
+    <p>
+      Developed a georegistration database that linked Earth’s imagery with precise location data using Python, supporting advanced computer vision research. Collaborated with researchers to improve image recognition and mapping algorithms, optimizing data processing for geospatial applications. Conducted exploratory data analysis and contributed to the development of a prototype system for automated image-location association.
+    </p>
+
+    <h2>Projects & Research</h2>
+    <ul>
+      <li>
+        <strong>Interactive Scenario Builder (Builder):</strong> Lead developer and cloud infrastructure manager for a mission-critical RF simulation tool using Java, AWS GovCloud, and Docker.
+      </li>
+      <li>
+        <strong>Stock Predictor using Machine Learning:</strong> Developed a Python application leveraging scikit-learn to predict stock prices using historical data from Yahoo Finance, featuring both GUI and command-line interfaces.
+      </li>
+      <li>
+        <strong>Hidden Point Removal (HPR) Operator Implementation:</strong> Implemented the HPR algorithm in C++ to optimize 3D point cloud processing for improved visibility determination.
+      </li>
+      <li>
+        <strong>Customer Churn Prediction (Sparkify):</strong> Built a machine learning model to predict customer churn using user interaction data through comprehensive data wrangling and analysis.
+      </li>
+      <li>
+        <strong>Date Calculator in C:</strong> Created a comprehensive C program for date arithmetic, complete with a Makefile for streamlined compilation.
+      </li>
+    </ul>
+
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Programming:</strong> Java, Python, C++, C, Bash scripting</li>
+      <li>
+        <strong>Cloud & DevOps:</strong> AWS GovCloud (EC2, S3, Networking), Docker, Kubernetes, CI/CD (Jenkins, GitLab CI/CD)
+      </li>
+      <li><strong>Operating Systems:</strong> Linux (primary development environment)</li>
+      <li>
+        <strong>Software Development:</strong> Backend systems, Web applications, API development, Distributed Systems
+      </li>
+      <li>
+        <strong>Data & Visualization:</strong> RF modeling, Simulation tools, Weather data integration
+      </li>
+      <li>
+        <strong>Version Control & Collaboration:</strong> Git, GitHub Enterprise, Phabricator, GitLab, Trac, Maven, JIRA
+      </li>
+      <li><strong>Agile & Leadership:</strong> Team mentoring, Project management, Agile methodologies</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>330-903-6009 | dhimalp@gmail.com | prakash.dhimal.civ@us.navy.mil</p>
+  </section>
+
+  <!-- Experience Tab -->
+  <section id="experience" class="tab-content">
+    <h2>Experience</h2>
+    <div class="job">
+      <h3>Computer Scientist</h3>
+      <p><strong>U.S. Naval Research Laboratory (NRL), Washington, D.C.</strong><br>
+        August 2016 – Present</p>
       <p>
-        Experienced software developer with 8+ years in software development, cloud infrastructure management, and application containerization. Proficient in Java, Python, C, and C++, with extensive experience working on modeling and simulation applications for radio frequency (RF) analysis. Strong background in Linux environments—both professionally and personally—with expertise in leading teams, managing cloud deployments, and optimizing large-scale systems for government and defense organizations.
+        Lead the development, cloud deployment, and operational support of Interactive Scenario Builder (Builder), a 3D modeling and simulation tool used for radio frequency (RF) mission planning by the U.S. Navy. Oversee the modernization of Builder’s ecosystem, integrating cloud computing, containerization, and web-based solutions to improve accessibility, scalability, and efficiency.
       </p>
-    </section>
+      <p>
+        Manage end-to-end software development—from design and implementation to deployment and maintenance—ensuring high-performance computing capabilities for mission-critical operations. Spearhead cloud adoption efforts by leading the migration of Builder’s computational workloads to AWS GovCloud, enabling scalable, on-demand RF modeling and simulation services.
+      </p>
+      <p>
+        Facilitate cross-functional collaboration with researchers, engineers, and external partners to enhance system capabilities. Lead infrastructure management, automation, and security compliance to meet DoD standards. Mentor junior engineers and drive innovation in distributed computing, geospatial visualization, and RF propagation modeling.
+      </p>
+    </div>
+    <div class="job">
+      <h3>Research Intern – Computer Vision</h3>
+      <p><strong>Air Force Research Laboratory (AFRL), Eglin AFB, FL</strong><br>
+        June 2015 – August 2015</p>
+      <p>
+        Developed a georegistration database that linked Earth’s imagery with precise location data using Python, supporting advanced computer vision research. Collaborated with researchers to improve image recognition and mapping algorithms, optimizing data processing for geospatial applications. Contributed to a prototype system for automated image-location association.
+      </p>
+    </div>
+  </section>
 
-    <section id="experience" class="tab-content">
-      <h2>Experience</h2>
-      <div class="job">
-        <h3>Computer Scientist</h3>
-        <p><strong>U.S. Naval Research Laboratory (NRL), Washington, D.C.</strong></p>
-        <p><em>August 2016 – Present</em></p>
-        <ul>
-          <li>
-            <strong>Lead Developer & Cloud Infrastructure Management:</strong> Oversee development and deployment of Interactive Scenario Builder (Builder), a 3D modeling and simulation tool used for RF propagation analysis to support U.S. Navy operations.
-          </li>
-          <li>
-            <strong>Cloud-Based Development & Deployment:</strong> Manage Dockerized applications, web services, and APIs in AWS GovCloud, ensuring scalability, security, and performance.
-          </li>
-          <li>
-            <strong>Software Development:</strong> Maintain and enhance core Java-based systems, integrating new functionalities for electromagnetic and weather modeling.
-          </li>
-          <li>
-            <strong>Team Leadership & Mentoring:</strong> Conduct team meetings, manage infrastructure planning and cloud resource allocation, and mentor junior engineers.
-          </li>
-          <li>
-            <strong>Cross-Agency Collaboration:</strong> Work with NRL Marine Meteorology Division and other defense agencies to integrate geospatial data, weather models, and electromagnetic prediction tools into mission planning applications.
-          </li>
-          <li>
-            <strong>System Migration & Optimization:</strong> Transition legacy systems to cloud-based infrastructure, reducing latency and improving performance and reliability.
-          </li>
-          <li>
-            <strong>Web & API Development:</strong> Contribute to web-based visualization tools for RF data analysis, enhancing accessibility for military operators.
-          </li>
-          <li>
-            <strong>Rapid Prototyping & Research Support:</strong> Lead development of prototypes for electromagnetic spectrum modeling and conduct performance evaluations for cutting-edge RF technologies.
-          </li>
-        </ul>
-      </div>
+  <!-- Education Tab -->
+  <section id="education" class="tab-content">
+    <h2>Education</h2>
+    <p>
+      <strong>Master of Science, Computer Science</strong><br>
+      George Mason University, Fairfax, VA — May 2021<br>
+      Relevant Coursework: Analysis of Algorithms, Advanced Algorithms, Distributed Systems, Computational Geometry, Theory & Application of Data Mining, Mining Massive Datasets
+    </p>
+    <p>
+      <strong>Bachelor of Science, Computer Science (Minor: Finance)</strong><br>
+      University of West Florida, Pensacola, FL — May 2016
+    </p>
+  </section>
 
-      <div class="job">
-        <h3>Research Intern – Computer Vision</h3>
-        <p><strong>Air Force Research Laboratory (AFRL), Eglin AFB, FL</strong></p>
-        <p><em>June 2015 – August 2015</em></p>
-        <ul>
-          <li>
-            Developed a Python-based georegistration database to associate Earth imagery with geospatial locations as part of a georegistration project.
-          </li>
-          <li>
-            Employed Linux-based tools and scripting to enhance data processing workflows and improve research accuracy.
-          </li>
-        </ul>
-      </div>
-    </section>
+  <!-- Projects Tab -->
+  <section id="projects" class="tab-content">
+    <h2>Projects & Research</h2>
+    <ul>
+      <li><strong>Interactive Scenario Builder (Builder):</strong> Lead developer and cloud infrastructure manager for a mission-critical RF simulation tool using Java, AWS GovCloud, and Docker.</li>
+      <li><strong>Stock Predictor using Machine Learning:</strong> Developed a Python application leveraging scikit-learn to predict stock prices using historical data from Yahoo Finance, featuring both GUI and command-line interfaces.</li>
+      <li><strong>Hidden Point Removal (HPR) Operator Implementation:</strong> Implemented the HPR algorithm in C++ to optimize 3D point cloud processing for improved visibility determination.</li>
+      <li><strong>Customer Churn Prediction (Sparkify):</strong> Built a machine learning model to predict customer churn using user interaction data through comprehensive data wrangling and analysis.</li>
+      <li><strong>Date Calculator in C:</strong> Created a comprehensive C program for date arithmetic, complete with a Makefile for streamlined compilation.</li>
+    </ul>
+    <p>For more projects, visit my <a href="https://github.com/pdhimal1" target="_blank">GitHub</a>.</p>
+  </section>
 
-    <section id="projects" class="tab-content">
-      <h2>Projects & Research</h2>
-      <ul>
-        <li>
-          <strong>Interactive Scenario Builder (Builder):</strong> Lead developer and cloud infrastructure manager for a mission-critical RF modeling and simulation tool. Technologies: Java, AWS GovCloud, Docker.
-        </li>
-        <li>
-          <strong>Stock Predictor using Machine Learning:</strong> Developed a Python application leveraging scikit-learn to predict stock prices using historical data from Yahoo Finance, featuring both GUI and command-line interfaces.
-        </li>
-        <li>
-          <strong>Hidden Point Removal (HPR) Operator Implementation:</strong> Implemented the HPR algorithm in C++ to optimize 3D point cloud processing for improved visibility determination.
-        </li>
-        <li>
-          <strong>Customer Churn Prediction (Sparkify):</strong> Built a machine learning model to predict customer churn using user interaction data, incorporating data wrangling and model evaluation.
-        </li>
-        <li>
-          <strong>Date Calculator in C:</strong> Created a comprehensive C program for date arithmetic, complete with a Makefile for streamlined compilation.
-        </li>
-      </ul>
-      <p>For more projects, visit my <a href="https://github.com/pdhimal1" target="_blank">GitHub</a>.</p>
-    </section>
+  <!-- Skills Tab -->
+  <section id="skills" class="tab-content">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Programming:</strong> Java, Python, C++, C, Bash scripting</li>
+      <li><strong>Cloud & DevOps:</strong> AWS GovCloud (EC2, S3, Networking), Docker, Kubernetes, CI/CD (Jenkins, GitLab CI/CD)</li>
+      <li><strong>Operating Systems:</strong> Linux (primary development environment)</li>
+      <li><strong>Software Development:</strong> Backend systems, Web applications, API development, Distributed Systems</li>
+      <li><strong>Data & Visualization:</strong> RF modeling, Simulation tools, Weather data integration</li>
+      <li><strong>Version Control & Collaboration:</strong> Git, GitHub Enterprise, Phabricator, GitLab, Trac, Maven, JIRA</li>
+      <li><strong>Agile & Leadership:</strong> Team mentoring, Project management, Agile methodologies</li>
+    </ul>
+  </section>
 
-    <section id="skills" class="tab-content">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><strong>Programming:</strong> Java, Python, C++, C</li>
-        <li>
-          <strong>Cloud & DevOps:</strong> AWS GovCloud, Google Cloud, Docker, Kubernetes, CI/CD (Jenkins, Maven, GitLab)
-        </li>
-        <li><strong>Operating Systems:</strong> Linux (primary development environment)</li>
-        <li>
-          <strong>Software Development:</strong> Backend systems, Web applications, API development, Distributed Systems
-        </li>
-        <li>
-          <strong>Data & Visualization:</strong> RF modeling, Simulation tools, Weather data integration
-        </li>
-        <li><strong>Agile & Leadership:</strong> Team mentoring, Project management, Agile development practices</li>
-      </ul>
-    </section>
+  <!-- Contact Tab -->
+  <section id="contact" class="tab-content">
+    <h2>Contact</h2>
+    <p>📞 330-903-6009</p>
+    <p>✉️ dhimalp@gmail.com</p>
+    <p>✉️ prakash.dhimal.civ@us.navy.mil</p>
+  </section>
+</main>
 
-    <section id="contact" class="tab-content">
-      <h2>Contact</h2>
-      <p>📞 330-903-6009</p>
-      <p>✉️ dhimalp@gmail.com</p>
-      <p>✉️ prakash.dhimal.civ@us.navy.mil</p>
-    </section>
-  </main>
+<footer>
+  <p>© 2025 Prakash Dhimal. All Rights Reserved.</p>
+</footer>
 
-  <footer>
-    <p>© 2025 Prakash Dhimal. All Rights Reserved.</p>
-  </footer>
+<script>
+  // Tab Navigation Function
+  function openTab(event, tabId) {
+    const tabLinks = document.querySelectorAll(".tab-link");
+    const tabContents = document.querySelectorAll(".tab-content");
+    tabLinks.forEach(link => link.classList.remove("active"));
+    tabContents.forEach(content => content.classList.remove("active"));
+    event.currentTarget.classList.add("active");
+    document.getElementById(tabId).classList.add("active");
+  }
+
+  // Dark Mode Toggle Function
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+  darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    darkModeToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+  });
+</script>
 </body>
 </html>
-
