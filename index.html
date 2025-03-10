@@ -45,11 +45,28 @@
     }
     /* Navigation Tabs */
     nav {
-      background: #444;
-      padding: 10px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
+            background: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 5px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
     .tab-link {
       background: none;
       border: none;
@@ -117,6 +134,7 @@
   <button class="tab-link active" onclick="openTab(event, 'home')">Home</button>
   <button class="tab-link" onclick="openTab(event, 'experience')">Experience</button>
   <button class="tab-link" onclick="openTab(event, 'ai_ml')">AI/ML</button>
+  <button class="tab-link" onclick="openTab(event, 'cloud')">Cloud</button>
   <button class="tab-link" onclick="openTab(event, 'education')">Education</button>
   <button class="tab-link" onclick="openTab(event, 'projects')">Projects</button>
   <button class="tab-link" onclick="openTab(event, 'skills')">Skills</button>
@@ -267,6 +285,30 @@
                 </ul>
             </li>
         </ul>
+  </section>
+
+  <section id="cloud" class="tab-content">
+      <h2>Cloud</h2>
+      <ul>
+          <li><strong>Cloud & Software Engineer - U.S. Naval Research Laboratory</strong>
+              <ul>
+                  <li>Designed and deployed cloud-native applications in AWS GovCloud, improving system scalability, performance, and security for mission-critical defense applications.</li>
+                  <li>Led efforts to containerize applications using Docker and Kubernetes, improving software deployment efficiency and enabling rapid scaling.</li>
+                  <li>Developed and maintained cloud-based data processing pipelines, leveraging AWS S3 and EC2 for large-scale data management and analysis.</li>
+                  <li>Migrated legacy applications to the cloud, eliminating reliance on outdated on-prem infrastructure and improving system availability.</li>
+                  <li>Developed RESTful APIs to facilitate seamless communication between cloud-based applications and end users.</li>
+                  <li>Led cloud-based visualization efforts, enhancing the usability of electromagnetic spectrum and RF modeling tools.</li>
+              </ul>
+          </li>
+          <li><strong>Cloud & Software Projects</strong>
+              <ul>
+                  <li><strong>AWS-Based Electromagnetic Simulation Service:</strong> Designed and deployed a cloud-native simulation tool using AWS S3, EC2, and IAM.</li>
+                  <li><strong>Builder in a Browser (BIB):</strong> Developed a web-based remote training solution, eliminating the need for physical software installations and reducing costs.</li>
+                  <li><strong>Optimized Data Storage & Retrieval:</strong> Enhanced AWS S3 data management, improving speed and accessibility for mission-critical datasets.</li>
+                  <li><strong>Near Real-Time Sensor Data Visualization:</strong> Designed and deployed a platform using AWS, Docker, and Node.js for interactive sensor data analysis.</li>
+              </ul>
+          </li>
+      </ul>
   </section>
 
   <!-- Education Tab -->
