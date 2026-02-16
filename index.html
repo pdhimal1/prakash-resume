@@ -4,284 +4,613 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prakash Dhimal - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* General Styling */
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #0f172a;
+      --accent: #3b82f6;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #334155;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+
+    .dark-mode {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --secondary: #f8fafc;
+      --text: #e2e8f0;
+      --text-light: #94a3b8;
+      --border: #334155;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-      transition: background 0.3s, color 0.3s;
+      box-sizing: border-box;
     }
-    header, footer {
-      background: #222;
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      background: var(--bg);
+      color: var(--text);
+      transition: all 0.3s ease;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%);
       color: white;
-      padding: 10px 20px;
+      padding: 60px 20px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    header h1, footer p {
-      margin: 0;
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
+      animation: pulse 15s infinite;
     }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .header-contact {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+      position: relative;
+    }
+
+    .header-contact a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.9;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .header-contact a:hover {
+      opacity: 1;
+      color: var(--accent);
+    }
+
+    #dark-mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #dark-mode-toggle:hover {
+      background: rgba(255,255,255,0.2);
+      transform: rotate(15deg);
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 12px;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 4px;
+    }
+
+    .tab-link {
+      background: transparent;
+      border: none;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 10px 18px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .tab-link:hover {
+      background: var(--bg);
+      color: var(--primary);
+    }
+
+    .tab-link.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Main Container */
     .container {
       max-width: 900px;
-      margin: 20px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 40px auto;
+      padding: 0 20px;
     }
-    h2 {
-      border-bottom: 2px solid #222;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
-    .section {
-      margin-bottom: 20px;
-    }
-    /* Navigation Tabs */
-    nav {
-            background: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav ul li {
-            margin: 5px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            display: block;
-        }
-    .tab-link {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 18px;
-      padding: 10px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .tab-link:hover, .tab-link.active {
-      background: #666;
-    }
+
+    /* Sections */
     .tab-content {
       display: none;
-      padding: 20px;
-      text-align: left;
+      animation: fadeIn 0.3s ease;
     }
+
     .tab-content.active {
       display: block;
     }
-    /* Footer fixed at bottom */
-    footer {
-      background: #222;
-      color: white;
-      padding: 10px;
-      width: 100%;
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 5px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .card-header .company {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .card-header .date {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .skill-category {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .skill-category h4 {
+      color: var(--primary);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .skill-category p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    /* Lists */
+    ul {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    ul li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    ul li ul {
+      margin-top: 8px;
+      margin-left: 10px;
+    }
+
+    /* Projects */
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      border-left: 4px solid var(--primary);
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+    }
+
+    .project-card:hover {
+      border-left-color: var(--accent);
+      transform: translateX(4px);
+    }
+
+    .project-card strong {
+      color: var(--secondary);
+    }
+
+    #home .project-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      border-left: 4px solid var(--primary);
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+    }
+
+    #home .project-card:hover {
+      border-left-color: var(--accent);
+      transform: translateX(4px);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-item {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 12px;
       text-align: center;
-      margin-top: 20px;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
     }
-    /* Dark Mode */
-    .dark-mode {
-      background: #121212;
+
+    .contact-item:hover {
+      border-color: var(--primary);
+    }
+
+    .contact-item .icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-item a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--secondary);
       color: white;
+      padding: 30px;
+      text-align: center;
+      margin-top: 60px;
     }
+
+    footer p {
+      opacity: 0.8;
+    }
+
+    /* Dark mode overrides */
     .dark-mode header {
-      background: #111;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     }
-    .dark-mode nav {
-      background: #333;
+
+    .dark-mode .project-card,
+    .dark-mode .skill-category,
+    .dark-mode .contact-item,
+    .dark-mode .card {
+      background: #1e293b;
     }
-    .dark-mode .tab-link {
-      color: white;
+
+    .dark-mode footer {
+      background: #0f172a;
     }
-    .dark-mode .tab-link.active {
-      background: #555;
-    }
-    .dark-mode .container {
-      background: #222;
-      color: white;
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.8rem; }
+      nav ul { padding: 8px; }
+      .tab-link { padding: 8px 12px; font-size: 0.85rem; }
+      .container { padding: 0 15px; margin: 20px auto; }
+      .card { padding: 16px; }
     }
   </style>
 </head>
 <body>
 <header>
-  <h1>Prakash Dhimal</h1>
-  <p>330-903-6009 | dhimalp@gmail.com</p>
-  <p>
-    <a href="https://linkedin.com/in/pdhimal" target="_blank" style="color: white; text-decoration: none;">LinkedIn</a> |
-    <a href="https://github.com/pdhimal1" target="_blank" style="color: white; text-decoration: none;">GitHub</a>
-  </p>
   <button id="dark-mode-toggle">🌙</button>
+  <h1>Prakash Dhimal</h1>
+  <p style="opacity: 0.9; font-size: 1.1rem;">Software Engineer</p>
+  <div class="header-contact">
+    <span>📍 Washington, D.C. Area</span>
+    <a href="tel:330-903-6009">📞 330-903-6009</a>
+    <a href="mailto:dhimalp@gmail.com">✉️ dhimalp@gmail.com</a>
+    <a href="https://linkedin.com/in/pdhimal" target="_blank">💼 LinkedIn</a>
+    <a href="https://github.com/pdhimal1" target="_blank">💻 GitHub</a>
+  </div>
 </header>
 
 <nav>
-  <button class="tab-link active" onclick="openTab(event, 'home')">Home</button>
-  <button class="tab-link" onclick="openTab(event, 'experience')">Experience</button>
-  <button class="tab-link" onclick="openTab(event, 'ai_ml')">AI/ML</button>
-  <button class="tab-link" onclick="openTab(event, 'cloud')">Cloud</button>
-  <button class="tab-link" onclick="openTab(event, 'education')">Education</button>
-  <button class="tab-link" onclick="openTab(event, 'projects')">Projects</button>
-  <button class="tab-link" onclick="openTab(event, 'skills')">Skills</button>
-  <button class="tab-link" onclick="openTab(event, 'contact')">Contact</button>
+  <ul>
+    <li><button class="tab-link active" onclick="openTab(event, 'home')">Home</button></li>
+    <li><button class="tab-link" onclick="openTab(event, 'experience')">Experience</button></li>
+    <li><button class="tab-link" onclick="openTab(event, 'ai_ml')">AI/ML</button></li>
+    <li><button class="tab-link" onclick="openTab(event, 'cloud')">Cloud</button></li>
+    <li><button class="tab-link" onclick="openTab(event, 'education')">Education</button></li>
+    <li><button class="tab-link" onclick="openTab(event, 'projects')">Projects</button></li>
+    <li><button class="tab-link" onclick="openTab(event, 'skills')">Skills</button></li>
+    <li><button class="tab-link" onclick="openTab(event, 'contact')">Contact</button></li>
+  </ul>
 </nav>
 
 <main class="container">
   <!-- Home Tab: Full Resume -->
   <section id="home" class="tab-content active">
     <h2>Professional Summary</h2>
-    <p>
-      Experienced software developer with 8+ years of expertise in software development, cloud infrastructure management, and application containerization. Proficient in Java, Python, C, and C++ with extensive experience in modeling and simulation applications for radio frequency (RF) analysis. Strong background in Linux environments - both professionally and personally, and skilled in leading software development teams, managing cloud-based deployments, and optimizing large-scale systems for government and defense organizations.
-    </p>
+    <div class="card">
+      <p>Experienced software developer with 8+ years of expertise in software development, cloud infrastructure management, and application containerization. Proficient in Java, Python, C, and C++ with extensive experience in modeling and simulation applications for radio frequency (RF) analysis. Strong background in Linux environments - both professionally and personally, and skilled in leading software development teams, managing cloud-based deployments, and optimizing large-scale systems for government and defense organizations.</p>
+    </div>
 
     <h2>Education</h2>
-    <p>
-      <strong>Master of Science, Computer Science</strong><br>
-      George Mason University, Fairfax, VA - May 2021<br>
-      Relevant Coursework: Analysis of Algorithms, Advanced Algorithms, Distributed Systems, Computational Geometry, Theory & Application of Data Mining, Mining Massive Datasets
-    </p>
-    <p>
-      <strong>Bachelor of Science, Computer Science (Minor: Finance)</strong><br>
-      University of West Florida, Pensacola, FL - May 2016
-    </p>
+    <div class="card">
+      <h3>Master of Science, Computer Science</h3>
+      <p class="company">George Mason University, Fairfax, VA — May 2021</p>
+      <p style="color: var(--text-light); font-size: 0.9rem;">Relevant Coursework: Analysis of Algorithms, Advanced Algorithms, Distributed Systems, Computational Geometry, Theory & Application of Data Mining, Mining Massive Datasets</p>
+    </div>
+    <div class="card">
+      <h3>Bachelor of Science, Computer Science (Minor: Finance)</h3>
+      <p class="company">University of West Florida, Pensacola, FL — May 2016</p>
+    </div>
 
     <h2>Experience</h2>
-    <h3>Principal Software Engineer</h3>
-        <p><strong>Cutlass Systems Engineering</strong><br>
-          October 2025 – Present</p>
-        <ul>
-          <li><strong>Simulation Modeling:</strong> Design, develop, and maintain high‑fidelity simulation models representing real‑world maritime systems for complex system‑of‑systems analysis.</li>
-          <li><strong>Object Oriented Development:</strong> Lead software development in a Linux environment using Java, C++, and Python, prioritizing Object‑Oriented design patterns for scalability.</li>
-          <li><strong>Interoperability & Data Exchange:</strong> Define and implement protocols for data and event exchange between simulations to ensure seamless interoperability across diverse computing platforms and OS environments.</li>
-          <li><strong>API & Tooling:</strong> Design and debug robust APIs for 3rd‑party software integration and develop prototype tools for simulation control, data reduction, and 3D visualization.</li>
-          <li><strong>Analysis & Extraction:</strong> Implement software solutions for extracting and reducing simulation data to support mission‑critical defense decision‑making.</li>
-        </ul>
-    <h3>Computer Scientist</h3>
-    <p>
-      <strong>U.S. Naval Research Laboratory (NRL), Washington, D.C.</strong><br>
-      August 2016 - September 2025
-    </p>
-    <ul>
-      <li><strong>Development & Enhancement:</strong> Contributed to the development and enhancement of Interactive Scenario Builder (Builder), a Java-based 3D modeling and simulation tool for RF propagation analysis, adding new capabilities, fixing bugs, and creating comprehensive documentation.</li>
-      <li><strong>Cloud-Based Deployment:</strong> Managed Dockerized applications and web services on AWS GovCloud, ensuring scalable, secure, and high-performance deployments.</li>
-      <li><strong>Innovation:</strong> Developed “Builder in a Browser” (BIB) by containerizing the resource-intensive Builder and deploying it on AWS GovCloud with a no-VNC configuration, enabling remote, browser-based access to support training during COVID-19.</li>
-      <li><strong>Process Automation:</strong> Automated the release process using bash scripting and integrated it into our CI/CD pipeline with Jenkins, reducing release cycles from one week to two days and establishing detailed documentation as a reference.</li>
-      <li><strong>Code Reviews & Version Control:</strong> Conducted regular code reviews in Java, Python, and bash; led the migration from GitHub Enterprise to Phabricator (via Docker) and subsequently to GitLab, optimizing version control and collaboration across the team.</li>
-      <li><strong>Team Leadership & Collaboration:</strong> Facilitated team meetings, managed infrastructure planning, and mentored new engineers; established a team wiki for status updates to reduce meeting times and improve knowledge sharing; collaborated with cross-agency teams such as the NRL Marine Meteorology Division.</li>
-    </ul>
-
-    <h3>Research Intern - Computer Vision</h3>
-    <p>
-      <strong>Air Force Research Laboratory (AFRL), Eglin AFB, FL</strong><br>
-      June 2015 - August 2015
-    </p>
-    <ul>
-      <li>Developed a Python-based georegistration database to associate Earth imagery with geospatial coordinates, improving data accuracy for geospatial intelligence.</li>
-      <li>Utilized Linux-based tools and scripting to build scalable data processing workflows, enhancing overall research efficiency.</li>
-    </ul>
-
-    <h2>Projects & Research</h2>
-    <ul>
-      <li>
-        <strong>Interactive Scenario Builder (Builder):</strong> Lead developer and cloud infrastructure manager for a mission-critical RF simulation tool using Java, AWS GovCloud, and Docker.
-      </li>
-      <li>
-        <strong>Stock Predictor using Machine Learning:</strong> Developed a Python application leveraging scikit-learn to predict stock prices using historical data from Yahoo Finance, featuring both GUI and command-line interfaces.
-      </li>
-      <li>
-        <strong>Hidden Point Removal (HPR) Operator Implementation:</strong> Implemented the HPR algorithm in C++ to optimize 3D point cloud processing for improved visibility determination.
-      </li>
-      <li>
-        <strong>Customer Churn Prediction (Sparkify):</strong> Built a machine learning model to predict customer churn using user interaction data through comprehensive data wrangling and analysis.
-      </li>
-      <li>
-        <strong>Date Calculator in C:</strong> Created a comprehensive C program for date arithmetic, complete with a Makefile for streamlined compilation.
-      </li>
-    </ul>
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <h3>Principal Software Engineer</h3>
+          <p class="company">Cutlass Systems Engineering</p>
+        </div>
+        <span class="date">October 2025 – Present</span>
+      </div>
+      <ul>
+        <li><strong>Simulation Modeling:</strong> Design, develop, and maintain high‑fidelity simulation models representing real‑world maritime systems for complex system‑of‑systems analysis.</li>
+        <li><strong>Object Oriented Development:</strong> Lead software development in a Linux environment using Java, C++, and Python, prioritizing Object‑Oriented design patterns for scalability.</li>
+        <li><strong>Interoperability & Data Exchange:</strong> Define and implement protocols for data and event exchange between simulations.</li>
+        <li><strong>API & Tooling:</strong> Design and debug robust APIs for 3rd‑party software integration and develop prototype tools.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <h3>Computer Scientist</h3>
+          <p class="company">U.S. Naval Research Laboratory (NRL), Washington, D.C.</p>
+        </div>
+        <span class="date">August 2016 – September 2025</span>
+      </div>
+      <ul>
+        <li>Contributed to development and enhancement of Interactive Scenario Builder (Builder), a Java-based 3D modeling and simulation tool for RF propagation analysis.</li>
+        <li>Managed Dockerized applications and web services on AWS GovCloud, ensuring scalable, secure, and high-performance deployments.</li>
+        <li>Developed "Builder in a Browser" (BIB) by containerizing the resource-intensive Builder and deploying it on AWS GovCloud with a no-VNC configuration.</li>
+        <li>Automated the release process using bash scripting and integrated it into CI/CD pipeline with Jenkins, reducing release cycles from one week to two days.</li>
+        <li>Conducted regular code reviews in Java, Python, and bash; led migration from GitHub Enterprise to Phabricator and subsequently to GitLab.</li>
+        <li>Facilitated team meetings, managed infrastructure planning, and mentored new engineers.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <h3>Research Intern - Computer Vision</h3>
+          <p class="company">Air Force Research Laboratory (AFRL), Eglin AFB, FL</p>
+        </div>
+        <span class="date">June 2015 – August 2015</span>
+      </div>
+      <ul>
+        <li>Developed a Python-based georegistration database to associate Earth imagery with geospatial coordinates.</li>
+        <li>Utilized Linux-based tools and scripting to build scalable data processing workflows.</li>
+      </ul>
+    </div>
 
     <h2>Skills</h2>
-    <ul>
-      <li><strong>Programming:</strong> Java, Python, C++, C, Bash scripting</li>
-      <li>
-        <strong>Cloud & DevOps:</strong> AWS GovCloud (EC2, S3, Networking), Docker, Kubernetes, CI/CD (Jenkins, GitLab CI/CD)
-      </li>
-      <li><strong>Operating Systems:</strong> Linux (primary development environment)</li>
-      <li>
-        <strong>Software Development:</strong> Backend systems, Web applications, API development, Distributed Systems
-      </li>
-      <li>
-        <strong>Data & Visualization:</strong> RF modeling, Simulation tools, Weather data integration
-      </li>
-      <li>
-        <strong>Version Control & Collaboration:</strong> Git, GitHub Enterprise, Phabricator, GitLab, Trac, Maven, JIRA
-      </li>
-      <li><strong>Agile & Leadership:</strong> Team mentoring, Project management, Agile methodologies</li>
-    </ul>
-
-    <h2>Contact</h2>
-    <p>330-903-6009 | dhimalp@gmail.com</p>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h4>Programming</h4>
+        <p>Java, Python, C++, C, Bash scripting</p>
+      </div>
+      <div class="skill-category">
+        <h4>Cloud & DevOps</h4>
+        <p>AWS GovCloud, Docker, Kubernetes, CI/CD, Jenkins, GitLab</p>
+      </div>
+      <div class="skill-category">
+        <h4>Operating Systems</h4>
+        <p>Linux (primary development environment)</p>
+      </div>
+      <div class="skill-category">
+        <h4>Software Development</h4>
+        <p>Backend systems, Web applications, API development</p>
+      </div>
+    </div>
   </section>
 
   <!-- Experience Tab -->
   <section id="experience" class="tab-content">
     <h2>Experience</h2>
-    <div class="job">
-      <h3>Principal Software Engineer</h3>
-      <p><strong>Cutlass Systems Engineering</strong><br>
-        October 2025 – Present</p>
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <h3>Principal Software Engineer</h3>
+          <p class="company">Cutlass Systems Engineering</p>
+        </div>
+        <span class="date">October 2025 – Present</span>
+      </div>
       <ul>
-        <li><strong>Simulation Modeling:</strong> Design, develop, and maintain high‑fidelity simulation models representing real‑world maritime systems for complex system‑of‑systems analysis.</li>
-        <li><strong>Object Oriented Development:</strong> Lead software development in a Linux environment using Java, C++, and Python, prioritizing Object‑Oriented design patterns for scalability.</li>
-        <li><strong>Interoperability & Data Exchange:</strong> Define and implement protocols for data and event exchange between simulations to ensure seamless interoperability across diverse computing platforms and OS environments.</li>
-        <li><strong>API & Tooling:</strong> Design and debug robust APIs for 3rd‑party software integration and develop prototype tools for simulation control, data reduction, and 3D visualization.</li>
-        <li><strong>Analysis & Extraction:</strong> Implement software solutions for extracting and reducing simulation data to support mission‑critical defense decision‑making.</li>
+        <li><strong>Simulation Modeling:</strong> Design, develop, and maintain high‑fidelity simulation models representing real‑world maritime systems.</li>
+        <li><strong>Object Oriented Development:</strong> Lead software development in a Linux environment using Java, C++, and Python.</li>
+        <li><strong>Interoperability & Data Exchange:</strong> Define and implement protocols for data and event exchange between simulations.</li>
+        <li><strong>API & Tooling:</strong> Design and debug robust APIs for 3rd‑party software integration.</li>
       </ul>
     </div>
-    <div class="job">
-      <h3>Computer Scientist</h3>
-      <p><strong>U.S. Naval Research Laboratory (NRL), Washington, D.C.</strong><br>
-        August 2016 – September 2025</p>
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <h3>Computer Scientist</h3>
+          <p class="company">U.S. Naval Research Laboratory (NRL), Washington, D.C.</p>
+        </div>
+        <span class="date">August 2016 – September 2025</span>
+      </div>
       <ul>
-      <li><p>
-        Lead the development, cloud deployment, and operational support of Interactive Scenario Builder (Builder), a 3D modeling and simulation tool used for radio frequency (RF) mission planning by the U.S. Navy. Oversee the modernization of Builder’s ecosystem, integrating cloud computing, containerization, and web-based solutions to improve accessibility, scalability, and efficiency.
-      </p></li>
-      <li>
-        <p>
-        Manage end-to-end software development from design and implementation to deployment and maintenance, ensuring high-performance computing capabilities for mission-critical operations. Spearhead cloud adoption efforts by leading the migration of Builder’s computational workloads to AWS GovCloud, enabling scalable, on-demand RF modeling and simulation services.
-        </p>
-      <li>
-        <p>
-        Facilitate cross-functional collaboration with researchers, engineers, and external partners to enhance system capabilities. Lead infrastructure management, automation, and security compliance to meet DoD standards. Mentor junior engineers and drive innovation in distributed computing, geospatial visualization, and RF propagation modeling.
-        </p>
-      </li>
+        <li>Lead the development, cloud deployment, and operational support of Interactive Scenario Builder (Builder), a 3D modeling and simulation tool for RF mission planning.</li>
+        <li>Managed end-to-end software development from design to deployment and maintenance.</li>
+        <li>Spearheaded cloud adoption by leading migration of Builder's workloads to AWS GovCloud.</li>
+        <li>Facilitated cross-functional collaboration with researchers, engineers, and external partners.</li>
+        <li>Mentored junior engineers and drove innovation in distributed computing and RF propagation modeling.</li>
       </ul>
     </div>
-    <div class="job">
-      <h3>Research Intern – Computer Vision</h3>
-      <p><strong>Air Force Research Laboratory (AFRL), Eglin AFB, FL</strong><br>
-        June 2015 – August 2015</p>
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <h3>Research Intern – Computer Vision</h3>
+          <p class="company">Air Force Research Laboratory (AFRL), Eglin AFB, FL</p>
+        </div>
+        <span class="date">June 2015 – August 2015</span>
+      </div>
       <ul>
-        <li>
-          <p>
-          Developed a georegistration database that linked Earth’s imagery with precise location data using Python, supporting advanced computer vision research. Collaborated with researchers to improve image recognition and mapping algorithms, optimizing data processing for geospatial applications. Contributed to a prototype system for automated image-location association.
-          </p>
-        </li>
+        <li>Developed a georegistration database linking Earth's imagery with precise location data using Python.</li>
+        <li>Collaborated with researchers to improve image recognition and mapping algorithms.</li>
       </ul>
+    </div>
+  </section>
+
+  <section id="ai_ml" class="tab-content">
+    <h2>AI/ML Projects</h2>
+    <div class="project-card">
+      <strong>LLM-Based AI Server</strong>
+      <ul>
+        <li>Deployed a local AI-powered server with open-source GPT model, integrated with frontend for real-time interaction.</li>
+        <li>Implemented FastAPI for backend and utilized Hugging Face Transformers for LLM integration.</li>
+        <li>Containerized the application using Docker for scalability and reproducibility.</li>
+      </ul>
+    </div>
+    <div class="project-card">
+      <strong>Data Mining & Big Data Analytics</strong>
+      <ul>
+        <li>Conducted large-scale data mining projects using Python, Pandas, and PySpark.</li>
+        <li>Utilized Google Cloud and AWS for scalable storage and computing.</li>
+        <li>Designed and optimized ETL workflows for high-dimensional datasets.</li>
+      </ul>
+    </div>
+    <div class="project-card">
+      <strong>Machine Learning & AI Development</strong>
+      <ul>
+        <li>Developed and deployed AI-driven applications using TensorFlow, PyTorch, and Scikit-learn.</li>
+        <li>Built scalable ML pipelines for data preprocessing, model training, and deployment.</li>
+        <li>Worked on predictive modeling, NLP, and computer vision projects.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cloud" class="tab-content">
+    <h2>Cloud & Distributed Systems</h2>
+    <div class="card">
+      <h3>Cloud & Software Engineer - U.S. Naval Research Laboratory</h3>
+      <ul>
+        <li>Designed and deployed cloud-native applications in AWS GovCloud for mission-critical defense applications.</li>
+        <li>Led containerization efforts using Docker and Kubernetes for improved deployment efficiency.</li>
+        <li>Developed and maintained cloud-based data processing pipelines using AWS S3 and EC2.</li>
+        <li>Migrated legacy applications to the cloud, improving system availability.</li>
+        <li>Developed RESTful APIs for seamless communication between cloud applications and users.</li>
+      </ul>
+    </div>
+    <div class="project-card">
+      <strong>AWS-Based Electromagnetic Simulation Service</strong>
+      <p>Designed and deployed using AWS S3, EC2, and IAM.</p>
+    </div>
+    <div class="project-card">
+      <strong>Builder in a Browser (BIB)</strong>
+      <p>Developed a web-based remote training solution, eliminating physical software installations.</p>
+    </div>
+    <div class="project-card">
+      <strong>Near Real-Time Sensor Data Visualization</strong>
+      <p>Designed platform using AWS, Docker, and Node.js for interactive sensor data analysis.</p>
     </div>
   </section>
 
@@ -340,54 +669,109 @@
   <!-- Education Tab -->
   <section id="education" class="tab-content">
     <h2>Education</h2>
-    <p>
-      <strong>Master of Science, Computer Science</strong><br>
-      George Mason University, Fairfax, VA — May 2021<br>
-      Relevant Coursework: Analysis of Algorithms, Advanced Algorithms, Distributed Systems, Computational Geometry, Theory & Application of Data Mining, Mining Massive Datasets
-    </p>
-    <p>
-      <strong>Bachelor of Science, Computer Science (Minor: Finance)</strong><br>
-      University of West Florida, Pensacola, FL — May 2016
-    </p>
+    <div class="card">
+      <h3>Master of Science, Computer Science</h3>
+      <p class="company">George Mason University, Fairfax, VA — May 2021</p>
+      <p style="color: var(--text-light);">Relevant Coursework: Analysis of Algorithms, Advanced Algorithms, Distributed Systems, Computational Geometry, Theory & Application of Data Mining, Mining Massive Datasets</p>
+    </div>
+    <div class="card">
+      <h3>Bachelor of Science, Computer Science (Minor: Finance)</h3>
+      <p class="company">University of West Florida, Pensacola, FL — May 2016</p>
+    </div>
   </section>
 
   <!-- Projects Tab -->
   <section id="projects" class="tab-content">
     <h2>Projects & Research</h2>
-    <ul>
-      <li><strong>Interactive Scenario Builder (Builder):</strong> Lead developer and cloud infrastructure manager for a mission-critical RF simulation tool using Java, AWS GovCloud, and Docker.</li>
-      <li><strong>Stock Predictor using Machine Learning:</strong> Developed a Python application leveraging scikit-learn to predict stock prices using historical data from Yahoo Finance, featuring both GUI and command-line interfaces.</li>
-      <li><strong>Hidden Point Removal (HPR) Operator Implementation:</strong> Implemented the HPR algorithm in C++ to optimize 3D point cloud processing for improved visibility determination.</li>
-      <li><strong>Customer Churn Prediction (Sparkify):</strong> Built a machine learning model to predict customer churn using user interaction data through comprehensive data wrangling and analysis.</li>
-      <li><strong>Date Calculator in C:</strong> Created a comprehensive C program for date arithmetic, complete with a Makefile for streamlined compilation.</li>
-    </ul>
-    <p>For more projects, visit my <a href="https://github.com/pdhimal1" target="_blank">GitHub</a>.</p>
+    <div class="project-card">
+      <strong>Interactive Scenario Builder (Builder)</strong>
+      <p>Lead developer and cloud infrastructure manager for a mission-critical RF simulation tool using Java, AWS GovCloud, and Docker.</p>
+    </div>
+    <div class="project-card">
+      <strong>Stock Predictor using Machine Learning</strong>
+      <p>Developed a Python application leveraging scikit-learn to predict stock prices using historical data from Yahoo Finance.</p>
+    </div>
+    <div class="project-card">
+      <strong>Hidden Point Removal (HPR) Operator Implementation</strong>
+      <p>Implemented the HPR algorithm in C++ to optimize 3D point cloud processing for improved visibility determination.</p>
+    </div>
+    <div class="project-card">
+      <strong>Customer Churn Prediction (Sparkify)</strong>
+      <p>Built a machine learning model to predict customer churn using user interaction data.</p>
+    </div>
+    <div class="project-card">
+      <strong>Date Calculator in C</strong>
+      <p>Created a comprehensive C program for date arithmetic with Makefile for streamlined compilation.</p>
+    </div>
+    <p style="text-align: center; margin-top: 20px;">For more projects, visit my <a href="https://github.com/pdhimal1" target="_blank" style="color: var(--primary);">GitHub</a>.</p>
   </section>
 
   <!-- Skills Tab -->
   <section id="skills" class="tab-content">
     <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Programming:</strong> Java, Python, C++, C, Bash scripting</li>
-      <li><strong>Cloud & DevOps:</strong> AWS GovCloud (EC2, S3, Networking), Docker, Kubernetes, CI/CD (Jenkins, GitLab CI/CD)</li>
-      <li><strong>Operating Systems:</strong> Linux (primary development environment)</li>
-      <li><strong>Software Development:</strong> Backend systems, Web applications, API development, Distributed Systems</li>
-      <li><strong>Data & Visualization:</strong> RF modeling, Simulation tools, Weather data integration</li>
-      <li><strong>Version Control & Collaboration:</strong> Git, GitHub Enterprise, Phabricator, GitLab, Trac, Maven, JIRA</li>
-      <li><strong>Agile & Leadership:</strong> Team mentoring, Agile methodologies</li>
-    </ul>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h4>Programming</h4>
+        <p>Java, Python, C++, C, Bash scripting</p>
+      </div>
+      <div class="skill-category">
+        <h4>Cloud & DevOps</h4>
+        <p>AWS GovCloud, Docker, Kubernetes, CI/CD, Jenkins, GitLab</p>
+      </div>
+      <div class="skill-category">
+        <h4>Operating Systems</h4>
+        <p>Linux (primary development environment)</p>
+      </div>
+      <div class="skill-category">
+        <h4>Software Development</h4>
+        <p>Backend systems, Web applications, API development</p>
+      </div>
+      <div class="skill-category">
+        <h4>Data & Visualization</h4>
+        <p>RF modeling, Simulation tools, Weather data integration</p>
+      </div>
+      <div class="skill-category">
+        <h4>Version Control</h4>
+        <p>Git, GitHub Enterprise, Phabricator, GitLab, Maven, JIRA</p>
+      </div>
+      <div class="skill-category">
+        <h4>Agile & Leadership</h4>
+        <p>Team mentoring, Agile methodologies</p>
+      </div>
+    </div>
   </section>
 
   <!-- Contact Tab -->
   <section id="contact" class="tab-content">
     <h2>Contact</h2>
-    <p>📞 330-903-6009</p>
-    <p>✉️ dhimalp@gmail.com</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="icon">📞</div>
+        <h4>Phone</h4>
+        <a href="tel:330-903-6009">330-903-6009</a>
+      </div>
+      <div class="contact-item">
+        <div class="icon">✉️</div>
+        <h4>Email</h4>
+        <a href="mailto:dhimalp@gmail.com">dhimalp@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <div class="icon">💼</div>
+        <h4>LinkedIn</h4>
+        <a href="https://linkedin.com/in/pdhimal" target="_blank">Connect</a>
+      </div>
+      <div class="contact-item">
+        <div class="icon">💻</div>
+        <h4>GitHub</h4>
+        <a href="https://github.com/pdhimal1" target="_blank">View Profile</a>
+      </div>
+    </div>
   </section>
 </main>
 
 <footer>
   <p>© 2025 Prakash Dhimal. All Rights Reserved.</p>
+  <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 8px;">Principal Software Engineer | Cloud & DevOps | AI/ML</p>
 </footer>
 
 <script>
@@ -406,7 +790,14 @@
   darkModeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     darkModeToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
   });
+
+  // Load saved dark mode preference
+  if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+    darkModeToggle.textContent = "☀️";
+  }
 </script>
 </body>
 </html>
