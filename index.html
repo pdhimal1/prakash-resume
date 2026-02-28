@@ -43,6 +43,11 @@
       background: var(--bg);
       color: var(--text);
       transition: all 0.3s ease;
+      scroll-behavior: smooth;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     /* Header */
@@ -133,6 +138,12 @@
       top: 0;
       z-index: 100;
       box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      background: rgba(var(--card-bg-rgb, 255, 255, 255), 0.9);
+    }
+
+    .dark-mode nav {
+      background: rgba(30, 41, 59, 0.95);
     }
 
     nav ul {
@@ -397,9 +408,9 @@
     }
   </style>
 </head>
-<body>
+<body class="dark-mode">
 <header>
-  <button id="dark-mode-toggle">🌙</button>
+  <button id="dark-mode-toggle">☀️</button>
   <h1>Prakash Dhimal</h1>
   <p style="opacity: 0.9; font-size: 1.1rem;">Software Engineer</p>
   <div class="header-contact">
@@ -563,6 +574,31 @@
   <section id="ai_ml" class="tab-content">
     <h2>AI/ML Projects</h2>
     <div class="project-card">
+      <strong>ELI5Park – AI-Driven Knowledge Platform</strong>
+      <p><a href="https://eli5park.com" target="_blank" style="color: var(--primary);">eli5park.com</a></p>
+      <ul>
+        <li>Concept & Development: Full-stack web application using OpenCode to simplify complex topics into "Explain Like I'm 5" (ELI5) content.</li>
+        <li>Infrastructure: High-availability deployment using GitHub for version control and Cloudflare for DNS management, edge caching, and SSL security.</li>
+        <li>Business Purpose: Bridging the gap between technical jargon and accessibility by providing an AI-assisted platform that translates high-level concepts for a general audience.</li>
+      </ul>
+    </div>
+    <div class="project-card">
+      <strong>Local LLM Setup & Deployment</strong>
+      <ul>
+        <li>Set up and configured local LLMs using Docker Model Runner, LM Studio, Ollama, and OpenWebUI for private, offline AI inference.</li>
+        <li>Optimized model performance for hardware acceleration using GPU offloading and quantization techniques.</li>
+        <li>Built custom knowledge bases and RAG pipelines with local embeddings for domain-specific queries.</li>
+      </ul>
+    </div>
+    <div class="project-card">
+      <strong>Agentic AI Development</strong>
+      <ul>
+        <li>Built autonomous AI agents using OpenCode and Claude Code for task automation and code generation.</li>
+        <li>Implemented multi-step reasoning workflows with tool-use capabilities for complex problem-solving.</li>
+        <li>Integrated AI agents with CI/CD pipelines for automated code review and refactoring.</li>
+      </ul>
+    </div>
+    <div class="project-card">
       <strong>LLM-Based AI Server</strong>
       <ul>
         <li>Deployed a local AI-powered server with open-source GPT model, integrated with frontend for real-time interaction.</li>
@@ -614,58 +650,6 @@
     </div>
   </section>
 
-  <section id="ai_ml" class="tab-content">
-    <h2>AI/ML Projects</h2>
-      <ul>
-           <li><strong>LLM-Based AI Server</strong>
-                <ul>
-                    <li>Deployed a local AI-powered server, starting with an open-source GPT model, and integrated it with a frontend for real-time interaction.</li>
-                    <li>Implemented FastAPI for the backend and utilized Hugging Face Transformers for LLM integration.</li>
-                    <li>Containerized the application using Docker to ensure scalability and reproducibility.</li>
-                </ul>
-            </li>
-            <li><strong>Data Mining & Big Data Analytics</strong>
-                <ul>
-                    <li>Conducted large-scale data mining projects in graduate school, leveraging Python, Pandas, and PySpark to process and analyze massive datasets.</li>
-                    <li>Utilized Google Cloud and AWS for scalable storage and computing, running distributed data processing pipelines.</li>
-                    <li>Designed and optimized ETL workflows to extract meaningful insights from high-dimensional datasets.</li>
-                </ul>
-            </li>
-            <li><strong>Machine Learning & AI Development</strong>
-                <ul>
-                    <li>Developed and deployed AI-driven applications using TensorFlow, PyTorch, and Scikit-learn.</li>
-                    <li>Built scalable ML pipelines for data preprocessing, model training, and deployment.</li>
-                    <li>Integrated machine learning models into cloud environments using AWS and GCP.</li>
-                    <li>Worked on predictive modeling, NLP, and computer vision projects for real-world applications.</li>
-                </ul>
-            </li>
-        </ul>
-  </section>
-
-  <section id="cloud" class="tab-content">
-      <h2>Cloud & Distributed Systems </h2>
-      <ul>
-          <li><strong>Cloud & Software Engineer - U.S. Naval Research Laboratory</strong>
-              <ul>
-                  <li>Designed and deployed cloud-native applications in AWS GovCloud, improving system scalability, performance, and security for mission-critical defense applications.</li>
-                  <li>Led efforts to containerize applications using Docker and Kubernetes, improving software deployment efficiency and enabling rapid scaling.</li>
-                  <li>Developed and maintained cloud-based data processing pipelines, leveraging AWS S3 and EC2 for large-scale data management and analysis.</li>
-                  <li>Migrated legacy applications to the cloud, eliminating reliance on outdated on-prem infrastructure and improving system availability.</li>
-                  <li>Developed RESTful APIs to facilitate seamless communication between cloud-based applications and end users.</li>
-                  <li>Led cloud-based visualization efforts, enhancing the usability of electromagnetic spectrum and RF modeling tools.</li>
-              </ul>
-          </li>
-          <li><strong>Cloud & Software Projects</strong>
-              <ul>
-                  <li><strong>AWS-Based Electromagnetic Simulation Service:</strong> Designed and deployed a cloud-native simulation tool using AWS S3, EC2, and IAM.</li>
-                  <li><strong>Builder in a Browser (BIB):</strong> Developed a web-based remote training solution, eliminating the need for physical software installations and reducing costs.</li>
-                  <li><strong>Optimized Data Storage & Retrieval:</strong> Enhanced AWS S3 data management, improving speed and accessibility for mission-critical datasets.</li>
-                  <li><strong>Near Real-Time Sensor Data Visualization:</strong> Designed and deployed a platform using AWS, Docker, and Node.js for interactive sensor data analysis.</li>
-              </ul>
-          </li>
-      </ul>
-  </section>
-
   <!-- Education Tab -->
   <section id="education" class="tab-content">
     <h2>Education</h2>
@@ -683,6 +667,13 @@
   <!-- Projects Tab -->
   <section id="projects" class="tab-content">
     <h2>Projects & Research</h2>
+    <div class="project-card">
+      <strong>ELI5Park – AI-Driven Knowledge Platform</strong>
+      <p><a href="https://eli5park.com" target="_blank" style="color: var(--primary);">eli5park.com</a></p>
+      <p>Concept & Development: Full-stack web application using OpenCode to simplify complex topics into "Explain Like I'm 5" (ELI5) content.</p>
+      <p>Infrastructure: High-availability deployment using GitHub for version control and Cloudflare for DNS management, edge caching, and SSL security.</p>
+      <p>Business Purpose: Bridging the gap between technical jargon and accessibility by providing an AI-assisted platform that translates high-level concepts for a general audience.</p>
+    </div>
     <div class="project-card">
       <strong>Interactive Scenario Builder (Builder)</strong>
       <p>Lead developer and cloud infrastructure manager for a mission-critical RF simulation tool using Java, AWS GovCloud, and Docker.</p>
@@ -774,6 +765,39 @@
   <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 8px;">Principal Software Engineer | Cloud & DevOps | AI/ML</p>
 </footer>
 
+<button id="scroll-to-top" title="Scroll to top">↑</button>
+
+<style>
+  #scroll-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  #scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #scroll-to-top:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+  }
+</style>
+
 <script>
   // Tab Navigation Function
   function openTab(event, tabId) {
@@ -783,6 +807,7 @@
     tabContents.forEach(content => content.classList.remove("active"));
     event.currentTarget.classList.add("active");
     document.getElementById(tabId).classList.add("active");
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   // Dark Mode Toggle Function
@@ -793,11 +818,46 @@
     localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
   });
 
-  // Load saved dark mode preference
-  if (localStorage.getItem("darkMode") === "true") {
+  // Load saved dark mode preference (default to dark mode)
+  const savedPreference = localStorage.getItem("darkMode");
+  if (savedPreference === "false") {
+    document.body.classList.remove("dark-mode");
+    darkModeToggle.textContent = "🌙";
+  } else {
     document.body.classList.add("dark-mode");
     darkModeToggle.textContent = "☀️";
   }
+
+  // Scroll to top button
+  const scrollToTopBtn = document.getElementById("scroll-to-top");
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) {
+      scrollToTopBtn.classList.add("visible");
+    } else {
+      scrollToTopBtn.classList.remove("visible");
+    }
+  });
+
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+      const tabs = Array.from(document.querySelectorAll(".tab-link"));
+      const activeIndex = tabs.findIndex(tab => tab.classList.contains("active"));
+      let newIndex;
+      
+      if (e.key === "ArrowRight") {
+        newIndex = (activeIndex + 1) % tabs.length;
+      } else {
+        newIndex = (activeIndex - 1 + tabs.length) % tabs.length;
+      }
+      
+      tabs[newIndex].click();
+    }
+  });
 </script>
 </body>
 </html>
