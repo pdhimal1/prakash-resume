@@ -1,3 +1,3 @@
-Available at: https://pdhimal1.github.io/prakash-resume/
+Available at: https://prakashdhimal.com
 
 LinkedIn URL: https://www.linkedin.com/in/pdhimal/
